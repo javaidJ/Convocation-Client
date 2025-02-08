@@ -1,0 +1,24 @@
+
+<div class="row" >
+    <div class="col-6 me-5 mt-5 " >
+        <div class="card" style="box-shadow: 5px 5px 5px gray ; ">
+          <!-- <img src="{{baseUrl+student.filePath}}" alt=""> -->
+<div class="row d-flex justify-content-center mt-5">
+<img src="/assets/images/iustcomputerblock.jpg" class="img-fluid" style=" height: 200px; width: 220px; border-radius: 130px; " alt="">
+
+</div>
+      <div class="card-body ">
+        <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Name</strong>: {{guest.name}}</h5>
+
+        <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Gender</strong>: {{guest.gender |gender}}</h5>
+
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Email</strong>: {{guest.email}}</h5>
+
+        <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Contact No</strong>: {{guest.contactNo}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Designation</strong>: {{guest.designation}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Arrived From</strong>: {{guest.guestArrivedFrom}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Is Out sider</strong>: {{guest.isOutSider == true ?' OutSider': 'University'}}</h5>
+      </div>
+    </div></div>
+  
+  </div>

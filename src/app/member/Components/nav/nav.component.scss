@@ -1,0 +1,291 @@
+@import "/src/Styles/main.scss";
+@mixin hover{
+    color:white;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    width: 100%;
+    height:100%;
+}
+
+nav ul li a#acitve,a:hover{
+    color: #000;
+    background-color:$linkColor;
+    padding: 6px;
+    border-radius: 5px;
+}
+nav{
+    display: flex;
+    background-color:$light;
+    width: 100%;
+    height: 10vh;
+    z-index: 10;
+    left:0;
+    top:0;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width:200px){
+        display: grid;
+ 
+    }
+    .nav__logo{
+        padding-left: 24px;
+        color: $dark;
+        font-size: 24px;
+        text-decoration: none;
+        @media (max-width:200px){
+            padding-left: 0;
+        }
+    }
+
+    #checkbox{
+        display: none;   
+    }
+    
+    ul{
+        display: flex;
+        position: relative;
+        text-align: center;
+        margin-right:24px;
+        list-style: none;
+        li{
+            text-transform: capitalize;
+            list-style: none;
+            text-decoration: none;
+            padding:0 1rem; 
+        }
+        a{
+            color:$dark;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+            'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #button{
+            border:none;
+            outline: none;
+            border-radius: 15px;
+            background: $lightGrey;
+            margin-left:16px;
+            color:$dark;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            &#button:after{
+                position: absolute;
+                content: "";
+                top:0;
+                left:0;
+                width: 0;
+                height: 100%;
+                background: $dark;
+                opacity: 50%;
+                transition: all 0.6s;
+                border-radius: 4px;
+            }
+            &#button:hover:after{
+                width: 100%;
+            }
+
+        }
+    }
+    #checkbtn{
+        display: none;
+            @media(min-width:90px) and (max-width:768px){
+                display: inline-block;   
+                margin-right: 8px;
+                margin-top: 0;
+                float: right;
+                font-size:24px;
+        
+            }
+        }
+    }
+
+#checkbox:checked ~ ul{
+    right:0;
+   }
+
+@media (max-width:768px) {
+    #checkbtn{
+        display: block;
+    }
+
+    nav ul{
+       display: block;
+       position: fixed;
+       width: 100vw;
+       background-color: $dark;
+       opacity: 75%;
+       padding: 12px 12px;
+       top:10vh;
+       height: 90vh;
+       right:-150vw;
+       transition: 0.5s ease;
+
+       li{
+        display: flex;
+        text-transform: capitalize;
+        text-decoration: none;
+        top:10vh;
+        font-size: 20px;
+        transition: .5s;
+        padding: 24px;
+        line-height: 40px;
+
+        a{
+            color: $light;
+            @include hover;
+            &#button{
+                padding: 5px;
+                margin-left: 0;
+                background: none;
+                color:white;
+               @include hover;
+
+            }
+
+        }
+    
+        }
+       
+    }
+
+   }
+
+
+   
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body{
+    background: #f5f6fa;
+  }
+  
+  .wrapper .sidebar{
+    background: #287288;
+     //rgb(20 27 30);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+  }
+  .sidebar ul li a{
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  .wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+      border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+  }
+  
+  .wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+  }
+  
+  .wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #090a0a;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+  }
+  
+  .wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+  }
+  
+   
+  
+  .wrapper .sidebar ul li a:hover,
+  .wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+  
+    background:white;
+      border-right: 2px solid rgb(5, 68, 104);
+  }
+  
+  .wrapper .sidebar ul li a:hover .icon,
+  .wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+  }
+  
+  .wrapper .sidebar ul li a:hover:before,
+  .wrapper .sidebar ul li a.active:before{
+    display: block;
+  }
+  
+  .wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+  }
+  
+  .wrapper .section .top_navbar{
+    background: rgb(7, 105, 185);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+   
+  }
+  
+  .wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+  }
+  
+  .wrapper .section .top_navbar .hamburger a:hover{
+    color: #a2ecff;
+  }
+  
+   .wrapper .section .container{
+    margin: 30px;
+    background: #fff;
+    padding: 50px;
+    line-height: 28px;
+  }
+  
+  body.active .wrapper .sidebar{
+    left: -225px;
+  }
+  
+  body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+  }
+ 
+

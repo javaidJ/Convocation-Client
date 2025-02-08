@@ -1,0 +1,46 @@
+   
+   <div class="row mb-5">
+     <div class="col-10   " *ngFor="let gown of  gowns ">
+         <div class="card mb-5" >
+           <div class="row d-flex justify-content-center">
+   
+             <img src="{{baseUrl+ gown.filePath}}"  style="height: 150px; width: 250px;" alt="No preview">
+           </div>
+   
+       <div class="card-body ms-5 me-5 mt-5 ">
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Color</strong>: {{gown.color}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Quantity</strong>: {{gown.quantity}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Size</strong>: {{gown.size}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Charges</strong>: {{gown.charges}}</p>
+         <!-- <p class="item-card-title mt-3 mb-3 mx-2"><strong>Payment Status</strong>: {{gown.appPaymentStatus }}</p> -->
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Receipt Number</strong>: {{gown.receipt}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Payment Method</strong>: {{gown.paymentMethod}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Transaction Id</strong>: {{gown.transactionId}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Payment Date</strong>: {{gown.paymentDate | date}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Name</strong>: {{gown.name}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Parentage </strong>: {{gown.parentage}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Contact No  </strong>: {{gown.contactNo}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Email </strong>: {{gown.email}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Reg No </strong>: {{gown.regNumber}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Batch</strong>: {{gown.batch}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Course</strong>: {{gown.course | course}}</p>
+         <p class="item-card-title mt-3 mb-3 mx-2"><strong>Position</strong>: {{gown.position | position}}</p>
+   
+         <div  class="my-4 d-flex justify-content-center">
+         </div>
+       </div>
+     </div></div>
+   
+   </div>
+   
+     
+     
+     
+     <!-- ................................................... -->
+     
+   
+     
+     <!-- .......................................................... -->
+     
+    
+     

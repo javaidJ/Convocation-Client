@@ -1,0 +1,188 @@
+
+<div class="container register-form ">
+    <div class="form">
+        <form #myForm="ngForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" #name="ngModel" name="name" [(ngModel)]="signupModel.name"
+                            [class.is-invalid]="name.touched && name.invalid" required class="form-control">
+                        <div *ngIf="name.touched && name.invalid" class="text-danger">
+                            <div *ngIf="name.errors?.['required']">
+                                Name is Required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentage">Parentage</label>
+                        <input type="text" #Parentage="ngModel"name="parentage" [(ngModel)]="signupModel.parentage"
+                            [class.is-invalid]="Parentage.touched && Parentage.invalid" required class="form-control">
+                        <div *ngIf="Parentage.touched && Parentage.invalid" class="text-danger">
+                            <div *ngIf="Parentage.errors?.['required']">
+                                Parentage is Required
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input type="text" class="form-control" name="userName" #userName="ngModel" [(ngModel)]="signupModel.userName"
+                            [class.is-invalid]="userName.touched && userName.invalid" required>
+                        <div *ngIf="userName.touched && userName.invalid" class="text-danger">
+                            <div *ngIf="userName.errors?.['required']">
+                                UserName is Required
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="signupModel.email"
+                            [class.is-invalid]="email.touched && email.invalid" required>
+                        <div *ngIf="email.touched && email.invalid" class="text-danger">
+                            <div *ngIf="email.errors?.['required']">
+                                Email is Required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" #Password="ngModel"
+                            [(ngModel)]="signupModel.password"
+                            [class.is-invalid]="Password.touched && Password.invalid" required>
+                        <div *ngIf="Password.touched && Password.invalid" class="text-danger">
+                            <div *ngIf="Password.errors?.['required']">
+                                Password Required
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactNo">Phone</label>
+                        <input type="tel" name="contacNo" class="form-control" #contacNo="ngModel"
+                            [(ngModel)]="signupModel.contactNo"
+                            [class.is-invalid]="contacNo.touched && contacNo.invalid" required>
+                        <div *ngIf="contacNo.touched && contacNo.invalid" class="text-danger">
+                            <div *ngIf="contacNo.errors?.['required']">
+                                contactNo Required
+                            </div>
+                        </div>
+                    </div>
+                    <label for="course">Course</label>
+                    <select class="form-select" name="course" #course="ngModel" [(ngModel)]="signupModel.course" required
+                        style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                        <option value="">Select Course</option>
+                        <option [ngValue]="1">MCA</option>
+                        <option [ngValue]="2">MSC IT</option>
+                        <option [ngValue]="3">MBA</option>
+                        <option [ngValue]="4">IMBA</option>
+                        <option [ngValue]="5">JMC</option>
+                        <option [ngValue]="6">MSC Statistics</option>
+                        <option [ngValue]="7">MSC Physics</option>
+                        <option [ngValue]="8">MSC Chemistry</option>
+                        <option [ngValue]="9">MTech Food Technology</option>
+                        <option [ngValue]="10">BSCNursing </option>
+                        <option [ngValue]="11">CE</option>
+                        <option [ngValue]="12">ME</option>
+                        <option [ngValue]="13">ECE</option>
+                        <option [ngValue]="14">CSE</option>
+                        <option [ngValue]="15">EE</option>
+                    </select>
+
+                    <label for="gender">Gender</label>
+                    <select class="form-select" name="gender" #gender="ngModel" [(ngModel)]="signupModel.gender" required
+                        style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                        <option value="">Select Gender</option>
+                        <option [ngValue]="1">Male</option>
+                        <option [ngValue]="2">Female</option>
+                    </select>
+                    <label for="departemntId">Department</label>
+                    <select class="form-select" name="departemntId" style="border-radius: 19px; margin-bottom: 16px;"
+                        #department="ngModel" [(ngModel)]="signupModel.departemntId" required
+                        aria-label="Default select example">
+                        <option value="">Select Department</option>
+                        <option class="form-control" *ngFor="let department of departmentList"
+                            [value]='[department.id]'>
+                            {{department.departmentName}}</option>
+                    </select>
+                    <div class="form-group">
+                        <label for="password"> Confirm Password</label>
+                        <input type="password" name="confirmPassword" class="form-control" #confirmPassword="ngModel"
+                            [(ngModel)]="signupModel.confirmPassword"
+                            [class.is-invalid]="confirmPassword.touched && confirmPassword.invalid"
+                            required>
+                        <div *ngIf="confirmPassword.touched && confirmPassword.invalid" class="text-danger">
+                            <div *ngIf="confirmPassword.errors?.['required']">
+                                Confirm Password Required
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                        <div class="col-md-4">
+                            <label for="position">Position</label>
+                            <select class="form-select" name="position" #position="ngModel" [(ngModel)]="signupModel.position" required
+                                style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                                <option value="">Select Position</option>
+                                <option [ngValue]="1">Gold</option>
+                                <option [ngValue]="2">Silver</option>
+                                <option [ngValue]="3">Bronze</option>
+                            </select>
+                            <div class="form-group">
+                                <label for="percentage">Percentage</label>
+                                <input type="number" name="percentage" class="form-control" #percentage="ngModel"
+                                    [(ngModel)]="signupModel.percentage"
+                                    [class.is-invalid]="percentage.touched && percentage.invalid" required>
+                                <div *ngIf="percentage.touched && percentage.invalid" class="text-danger">
+                                    <div *ngIf="percentage.errors?.['required']">
+                                        Percentage Required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="batch">Batch</label>
+                                <input type="text" name="batch" class="form-control" #batch="ngModel" [(ngModel)]="signupModel.batch"
+                                    [class.is-invalid]="batch.touched && batch.invalid" required>
+                                <div *ngIf="batch.touched && batch.invalid" class="text-danger">
+                                    <div *ngIf="batch.errors?.['required']">
+                                        Batch Required
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="regNumber">Registration Number</label>
+                                <input type="text" name="RegNo" class="form-control" #RegNo="ngModel"
+                                    [(ngModel)]="signupModel.regNumber"
+                                    [class.is-invalid]="RegNo.touched && RegNo.invalid" required>
+                                <div *ngIf="RegNo.touched && RegNo.invalid" class="text-danger">
+                                    <div *ngIf="RegNo.errors?.['required']">
+                                        Registration Number is Required
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                
+                    <div class="d-grid">
+                        <button class="btn btn-primary mt-2" type="submit" [disabled]="myForm.invalid"
+                          (click)="signup()" >Sign Up
+                        <app-spinner *ngIf="loadSpinner"></app-spinner>
+
+                            </button>
+                    </div>
+        </form>
+    </div>
+
+
+</div>

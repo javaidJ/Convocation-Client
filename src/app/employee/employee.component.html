@@ -1,0 +1,52 @@
+
+  <div class="container-fluid" #container>
+    <div class="col-md-3">
+      <nav class="sidebar" >
+        <p class="sidebtn" >
+          <!-- <i class="fa-solid fa-xmark">close</i> -->
+        </p>
+        <div class="text">
+          Empployee
+        </div>
+        <ul class="main_side">
+          <li> <div>
+            <a
+            class="dropdown-item"
+            (click)="sharedService.logOut()"
+            style="cursor: pointer"
+            >Logout</a>
+          </div></li>
+          <li class="active"><a>Dashboard</a></li>
+      
+          <li class="dropdown">
+            <a type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Employee
+              <span class="fas fa-caret-down"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/employee/updateemployee">update Employee</a>
+            </div>
+          </li>
+
+
+      
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="content" >
+          <div class="btn"  (click)="toggleOn()" #btnon>
+      <label for="toggle"><i class="fas fa-bars">Menu</i></label>
+    </div>
+    <div class="btn collapse"  (click)="toggleOff()" #btnoff>
+      <label for="toggle"><i class="fas fa-bars">Menu</i></label>
+    </div>
+        <div class="header">
+          <!-- <router-outlet></router-outlet> -->
+        </div>
+        </div>
+    </div>
+  
+  
+    </div>
+  

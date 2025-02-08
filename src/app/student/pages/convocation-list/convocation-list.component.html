@@ -1,0 +1,28 @@
+
+
+
+
+  <div>
+    <h1 class="text-center mt-2 "><u>Covocations</u></h1>
+</div>
+<div class="container mt-5 ms-2 flex-cards mb-5">
+  <div class="row d-flex flex wrap-wrap ">
+    <div class="col-6" style="height: 50vh;" *ngFor="let convo of convocations">
+      <div class="card item-card card-block mb-5" style="box-shadow: 5px 5px 5px gray;">
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Name</strong>: {{convo.name}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Description</strong>: {{convo.description}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Date</strong>: {{convo.convocationDate| date}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Venue</strong>: {{convo.venue}}</h5>
+        
+        <div class="row">
+          <div class="col-4 offset-4 mb-3 mt-3">
+        <div><button class="btn btn-primary"(click)="postStudentRegistration(convo.id)">Register</button></div>
+
+          </div>
+        </div>
+        
+        </div>
+      </div></div>
+    
+   
+  </div>

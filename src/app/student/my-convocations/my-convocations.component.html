@@ -1,0 +1,33 @@
+
+
+
+
+<div>
+    <h1 class="text-center mt-2 "><u>Covocations</u></h1>
+</div>
+<div class="container mt-5 ms-2 flex-cards mb-5">
+  <div class="row d-flex flex wrap-wrap ">
+    <div class="col-6" style="height: 50vh;" *ngFor="let convo of convocations">
+      <div class="card item-card card-block mb-5" style="box-shadow: 5px 5px 5px gray;">
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Name</strong>: {{convo.name}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Description</strong>: {{convo.description}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Date</strong>: {{convo.convocationDate| date}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Ends</strong>: {{convo.venue}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Venue</strong>: {{convo.venue}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Days Left</strong>: {{convo.daysLeft}}</h5>
+        <section>
+         <div  *ngIf="convo.row != 0; else elseSeat">
+            <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Venue</strong>: {{convo.seatSection }}</h5>
+            <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Row</strong>: {{convo.row }}</h5>
+            <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Seat Number</strong>: {{convo.seatNo }}</h5>
+         </div>
+         <ng-template #elseSeat>
+            <h1 class="alert alert-danger mx-2">Seat is not allocated yet</h1>
+         </ng-template>
+        </section>
+      
+        </div>
+      </div></div>
+    
+   
+  </div>

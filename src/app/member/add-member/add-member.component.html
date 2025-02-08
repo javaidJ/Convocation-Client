@@ -1,0 +1,72 @@
+<!-- <div class="row justify-content-center container1 mt-5 mx-3">
+    <div class="mb-3">
+        <a routerLink="/admin/brands" class="text-primary" style="cursor: pointer;">
+            <button class="btn btn-dark mx-4">Go Back</button>
+        </a>
+    </div> -->
+    <div class="col-lg-9">
+        <h1 class="mb-3 text-center" style="font-size: 25px;"><u>Add New Member</u></h1>
+        <form #myForm="ngForm" (ngSubmit)="AddnewMember(myForm.value)">
+            <div class="row g-3">
+    
+                <!-- <div class="col-md-6">
+                        <label for="your-name" class="form-label">Entity Name:</label>
+                        <select class="form-select" [(ngModel)]="AddMember.entityId" name="entityId"
+                            style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                            <option class="form-control" *ngFor="let employee of EmployeeList" [value]='[employee.id]'>
+                                {{employee.name}}</option>
+                        </select>
+                    </div> -->
+                <!-- <div class="col-md-6">
+                        <label for="your-name" class="form-label">Convocation Name:</label>
+                        <select class="form-select" [(ngModel)]="AddMembertoConvo.convocationId" name="convocationId"
+                            style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                            <option class="form-control" *ngFor="let convocation of ConvocationList"
+                                [value]='[convocation.id]'>
+                                {{convocation.name}}</option>
+                        </select>
+                    </div> -->
+    
+                <!-- <div class="col-md-6">
+                    <label for="your-name" class="form-label">Module:</label>
+                    <select class="form-select" [(ngModel)]="AddMembertoConvo.module" name="module"
+                        style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                        <option [ngValue]="1">Student</option>
+                        <option [ngValue]="2">Employee</option>
+                        <option [ngValue]="3">Guest</option>
+                        <option [ngValue]="4">Gown</option>
+    
+                    </select>
+                </div> -->
+    
+                <div class="col-md-6">
+                    <label for="your-name" class="form-label">Job Role:</label>
+                    <select class="form-select" [(ngModel)]="AddMembertoConvo.jobRole" name="jobRole"
+                        style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                        <option [ngValue]="100" selected>Job Role</option>
+                        <!-- <option [ngValue]="1">Organizor</option> -->
+                        <option [ngValue]="2">Host</option>
+                        <option [ngValue]="3">CrewMember</option>
+                        <option [ngValue]="4">Technical</option>
+                        <option [ngValue]="5">Other</option>
+                    </select>
+                </div>
+            </div>
+    
+    
+    
+    
+    
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-dark w-100 text-center fw-bold">Add Member</button>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+    
+        </form>
+    </div>

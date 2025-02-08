@@ -1,0 +1,79 @@
+
+
+<div class="content">
+    <div class="table-wrapper mt-2">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Convocation <b>List</b></h2>
+  
+            </div>
+            <div class="col-sm-6">
+              <!-- <a  class="btn btn-success" routerLink="/admin/addconvocation" data-toggle="modal"> <span>Add Convocation</span></a> -->
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Convocation Date</th>
+              <th>Venue</th>
+              <th>Info</th>
+              <th>Add</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of convocationList">
+            
+              <td>{{item.name}}</td>
+              <td>{{item.description}}</td>
+              <td>{{item.convocationDate |date:"medium"}} </td>
+              <td>
+                <a routerLink="/member/allocated-seats/{{item.id}}">
+                  {{item.venue}}
+                </a>
+              </td>
+            
+               <td >    
+                <div class="dropdown show">
+                  <a class=" dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    view
+                  </a>
+                
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['/member/memberListByConvo',item.id,item.name,item.venueId]">Members</a>
+                    <a class="dropdown-item" [routerLink]="['/member/participantListByConvo',item.id,item.name,item.venueId]">Participants</a>
+                    <!-- <a class="dropdown-item" [routerLink]="['/member/pendingRegistration',item.id]">pending Registrations</a> -->
+  
+  
+                  </div>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  
+                  </div>
+                </div>
+              </td>  
+  
+              <td  *ngIf="item.jobRole == 1">    
+                <div class="dropdown show">
+                  <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add To Convocation
+                  </a>
+                
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['/member/newEmpList',item.id]">Employee</a>
+                    <a class="dropdown-item" [routerLink]="['/member/guestList',item.id]">Guest</a>
+                    <a class="dropdown-item" [routerLink]="['/member/students',item.id]">Student</a>
+  
+                  </div>
+                </div>
+              </td> 
+  
+           
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>

@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card m-3" style="width: 40rem;">
+      <div class="card-body ">
+        <h5 class="card-title">Name Of Employee</h5>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        <p class="card-text">{{employee.name}}</p>
+        <h5 class="card-title">Email</h5>
+        <p class="card-text">{{employee.email}}</p>
+        <h5 class="card-title">Department</h5>
+        <p class="card-text">{{employee.departmentName}}</p>
+        <h5 class="card-title">Deleted</h5>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        <p class="card-text">{{employee.isDeleted |isDeleted}}</p>
+
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">ContactNo</h5>
+        <p class="card-text">{{employee.contactNo}}</p>
+        <h5 class="card-title">Gender</h5>
+        <p class="card-text">{{employee.gender |gender}}</p>
+        <h5 class="card-title">Employee Code</h5>
+        <p class="card-text">{{employee.empCode}}</p>
+        <h5 class="card-title">Designation</h5>
+        <p class="card-text">{{employee.designation |designation}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="content">
+        <div class="table-title">
+          <div class="row">
+          </div>
+        </div>
+        <div class="content">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-12">
+                <a  class="btn btn-success" routerLink="/admin/addseats" data-toggle="modal"> <span>Add Seats</span></a>
+              </div>
+            </div>
+          </div>
+          <form [formGroup]="myForm" (ngSubmit)="seatAllocate(myForm.value)">
+             <div class="form-group mt-2">
+              <label for="venue">Select Venue</label>
+              <select name="" id="" class="form-control" (click)="get2($event)" >
+                <option  value="" > Select Venue</option>
+                <option  *ngFor="let venue of venueList" [value]="venue.id" >
+                  {{venue.name}}</option>
+              </select>
+             </div>
+              
+             <div class="form-group mt-2">
+              <label for="convocation">Select Convocation</label>
+              <select name="" id="" class="form-control" (click)="get($event)"  >
+                <option  value="" > Select Convocation</option>
+                <option  *ngFor="let convocation of convocations" [value]="convocation.id" >
+                  {{convocation.name}}</option>
+              </select>
+             </div>
+
+             <div class="form-group mt-2">
+              <label for="seat">Seat</label>
+              <select name="" id="" class="form-control" (click)="get3($event)" >
+                <option  *ngFor="let seat of seatList" [value]="seat.id" >
+                 Row : {{seat.row}} , Section : {{ seat.seatSection}} , Seat Number: {{seat.seatNumber}}</option>
+              </select>
+             </div>
+
+             <div class="form-group mt-5 collapse">
+              <label for="">Convocation Name</label>
+              <input type="text" formControlName="convocationId" class="form-control"
+              value='{{convocationId}}' 
+               [(ngModel)]="convocationId">
+             </div>
+
+             <div class="form-group collapse">
+              <label for="">entityId</label>
+              <input type="text" formControlName="entityId" class="form-control"
+              value='{{entityId}}' 
+              [(ngModel)]="entityId">
+             </div>
+
+             <div class="form-group ">
+              <label for="">Seat Id</label>
+              <input type="text" formControlName="seatId" class="form-control"
+               value='{{seatId}}'  [(ngModel)]="seatId">
+             </div>
+                 <div class="d-grid">
+                  <button class="btn btn-primary mt-3">Allocate</button>
+                 </div>
+          </form>
+
+        </div>
+      </div>
+</div>

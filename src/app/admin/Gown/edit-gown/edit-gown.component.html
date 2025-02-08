@@ -1,0 +1,50 @@
+
+<div class="col-lg-9">
+    <h1 class="mb-3 text-center" style="font-size: 25px;"><u>Edit Gown</u></h1>
+    <form #myForm="ngForm" (ngSubmit)="AddNewGown()">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Gown Color:</label>
+                <input [(ngModel)]="AddGown.color" type="text" name="Color"  class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Quantity:</label>
+                <input [(ngModel)]="AddGown.quantity" type="number" name="Quantity" 
+                    class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label">Gown Size:</label>
+                <select [(ngModel)]="AddGown.size" class="form-select" name="Size"
+                    style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                    <option [ngValue]="" selected>Select Size</option>
+                    <option [ngValue]="1">S</option>
+                    <option [ngValue]="2">M</option>
+                    <option [ngValue]="3">L</option>
+                    <option [ngValue]="4">XL</option>
+                    <option [ngValue]="5">XXL</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Charges:</label>
+                <input [(ngModel)]="AddGown.charges" type="number" name="Charges"
+                    class="form-control">
+            </div>
+
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-dark w-100 text-center fw-bold">Update Gown</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </form>
+</div>

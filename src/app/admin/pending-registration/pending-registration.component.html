@@ -1,0 +1,28 @@
+
+<div class="container mt-5 ms-2 flex-cards">
+  <div class="row d-flex flex wrap-wrap ">
+    <div class="col-8 offset-2">
+      <div class="card item-card card-block mb-5"  *ngFor="let std of stdList">
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Name</strong>: {{std.name}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Email</strong>: {{std.email}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>ContactNo</strong>: {{std.contactNo}}</h5>
+        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Registration Status</strong>:
+          <p class="d-flex justify-content-center ">
+            <button [class]="std.registrationStatus==1?color1:color3">{{std.registrationStatus| status}}</button>
+            <button class="btn btn-outline-info mx-3" routerLink="/admin/student-details/{{std.entityId}}">More Details</button>
+  
+          </p>
+        </h5>
+            <select class="form-select" *ngIf="std.registrationStatus==1?showSelctDropDown:dontShowDropdown" [(ngModel)]="changeStatus.registrationStatus" (change)="changeRegistrationStatus(std.convocationId!,std.entityId!)" name="registrationStatus"
+                style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                <option [ngValue]="10" selected >change Status</option>
+                <option [ngValue]="1">Pending</option>
+                <option [ngValue]="2">Approved</option>
+                <option [ngValue]="3">Rejected</option>
+  
+            </select>
+      </div>
+    </div>
+    
+  </div>
+</div>

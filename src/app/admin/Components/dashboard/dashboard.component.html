@@ -1,0 +1,214 @@
+
+  <div class=" p-5 mb-5 mt-5">
+    <section class="mb-5">
+        <div class="row ">
+          <div class="col-4  mb-4">
+            <div class="card info-card" >
+              <div class="card-body ">
+                <p class="text-uppercase small mb-4 d-flex  justify-content-center">
+                  <strong>Total Covocations</strong>
+                </p>
+              <div class="d-flex  justify-content-center">
+                  <p class="info-card-text ">{{convocations.length}}</p>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-4  mb-4">
+            <div class="card info-card" >
+              <div class="card-body ">
+                <p class="text-uppercase small mb-4 d-flex  justify-content-center">
+                  <strong>Total Active Convocations</strong>
+                </p>
+              <div class="d-flex  justify-content-center">
+                  <p class="info-card-text ">{{latestConvocations.length}}</p>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-4  mb-4">
+            <div class="card info-card" >
+              <div class="card-body ">
+                <p class="text-uppercase small mb-4 d-flex  justify-content-center">
+                  <strong>Previous Covocations</strong>
+                </p>
+              <div class="d-flex  justify-content-center">
+                  <p class="info-card-text ">{{previousConvocations.length}}</p>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+  
+       
+        </div>
+      </section>
+  
+      
+    <section class="custom-card mt-5" >
+      <h3 class="mb-5 text-center ">Upcoming Convocations</h3>
+    <div class="container mt-5  flex-cards mb-5">
+      <div class="row d-flex flex wrap-wrap ">
+        <div class="col-12 "  *ngFor="let convo of latestConvocations">
+          <div class="card   item-card card-block mb-5" >
+            <div class="row my-4">
+              <div class="col-6 ">
+                <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Name</strong>: {{convo.name}}</h5>
+              <hr>
+                <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Description</strong>: {{convo.description}}</h5>
+              </div>
+
+              <div class="col-6">
+                <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Venue</strong>: {{convo.venue}}</h5>
+                <hr>
+                <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Date</strong>: {{convo.convocationDate| date}}</h5>
+
+              </div>
+            </div>
+            <hr>
+            <div class="row my-2">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-9">
+                    <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Students</strong>: {{convo.totalStudents}}</h5>
+                  </div>
+                  <div class="col-3">
+                    <a routerLink="/admin/convocation-participants/{{convo.id}}/{{convo.name}}/11">view</a>
+
+                  </div>
+                </div>
+                </div>
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-9">
+                      <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Guests</strong>: {{convo.totalGuests}}</h5>
+                    </div>
+                    <div class="col-3">
+                      <a routerLink="/admin/convocation-participants/{{convo.id}}/{{convo.name}}/9">view</a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-2">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-9">
+                      <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Participants </strong>: {{convo.totalParticipants}}</h5>
+                    </div>
+                    <div class="col-3">
+                      <a routerLink="/admin/other-participants/{{convo.id}}/{{convo.name}}">view</a>
+
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-9">
+                        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Members</strong>: {{convo.totalMembers}}</h5>
+                      </div>
+                      <div class="col-3">
+                        <a routerLink="/admin/member-convocation/{{convo.id}}/{{convo.name}}">view</a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+          
+            
+            </div>
+          </div></div>
+        
+       
+    
+    </section>
+
+
+    <section class="custom-card mt-5">
+      <h3 class="mb-5 text-center">Previous Convocations</h3>
+     
+      <div class="container mt-5  flex-cards mb-5">
+        <div class="row d-flex flex wrap-wrap ">
+          <div class="col-12 "  *ngFor="let convo of previousConvocations">
+            <div class="card item-card card-block mb-5" >
+              <div class="row my-4">
+                <div class="col-6 ">
+                  <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Name</strong>: {{convo.name}}</h5>
+                <hr>
+                  <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Description</strong>: {{convo.description}}</h5>
+                </div>
+  
+                <div class="col-6">
+                  <h5 class="item-card-title mt-3 mb-4 mx-2"><strong>Venue</strong>: {{convo.venue}}</h5>
+                  <hr>
+                  <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Date</strong>: {{convo.convocationDate| date}}</h5>
+  
+                </div>
+              </div>
+              <hr>
+              <div class="row my-2">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-9">
+                      <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Students</strong>: {{convo.totalStudents}}</h5>
+                    </div>
+                    <div class="col-3">
+                      <a routerLink="/admin/convocation-participants/{{convo.id}}/{{convo.name}}/11">view</a>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-9">
+                        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Guests</strong>: {{convo.totalGuests}}</h5>
+                      </div>
+                      <div class="col-3">
+                        <a routerLink="/admin/convocation-participants/{{convo.id}}/{{convo.name}}/9">view</a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row my-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-9">
+                        <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Participants </strong>: {{convo.totalParticipants}}</h5>
+                      </div>
+                      <div class="col-3">
+                        <a routerLink="/admin/other-participants/{{convo.id}}/{{convo.name}}">view</a>
+
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row">
+                        <div class="col-9">
+                          <h5 class="item-card-title mt-3 mb-3 mx-2"><strong>Total Members</strong>: {{convo.totalMembers}}</h5>
+                        </div>
+                        <div class="col-3">
+                          <a routerLink="/admin/member-convocation/{{convo.id}}/{{convo.name}}">view</a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+  
+            
+              
+              </div>
+            </div></div>
+          
+         
+      
+      </section>
+     

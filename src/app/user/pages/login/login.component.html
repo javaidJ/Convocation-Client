@@ -1,0 +1,154 @@
+<!-- <div class="container-fluid">
+    <div class="login-box" >
+        <h2>Login</h2>
+        <form  [formGroup]="myForm" >
+            <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" class="form-control" formControlName="userName">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="pas" class="form-control" formControlName="password">
+                <div class="forgot">
+                    <a routerLink="/forgotpassword" class="hov" >Forgot Password</a>
+                </div>
+            </div>
+            <a class="signBtn" (click)="login(myForm.value)" #signIn >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Sign In
+            </a>
+        </form>
+    </div>
+</div> -->
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+           
+            <div class="col-lg-12 login-title">
+                Login Here
+            </div>
+
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                    <form #myForm="ngForm">
+                        <div class="form-group">
+                            <label class="form-control-label">UserName</label>
+                            <input type="text"
+                            name="username"
+                            #userName="ngModel"
+                            [(ngModel)]="userLogin.userName"
+                            [class.is-invalid]="userName.touched && userName.invalid"
+                             class="form-control"
+                             required
+                             >
+
+                             <div *ngIf="userName.touched && userName.invalid" class="text-warning">
+                              <div *ngIf="userName.errors?.['required']">
+                               UserName is Required
+                              </div>
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Password</label>
+                            <input type="password"
+                            name="password"
+                            #Password="ngModel"
+                            required
+                            [(ngModel)]="userLogin.password"
+                            [class.is.invalid]="Password.touched && Password.invalid"
+                             class="form-control">
+                             <div *ngIf="Password.touched && Password.invalid" class="text-warning">
+                                <div *ngIf="Password.errors?.['required']">
+                                  Password is Required
+                                </div>
+                             </div>
+                           
+                        </div>
+
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                            </div>
+                            <div class="col-lg-6 login-btm login-button">
+                                <button type="submit" class="btn btn-outline-primary" (click)="logUser()">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
+        </div>
+    </div> -->
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yinka Enoch Adedokun">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="container-fluid mt-1">
+        <div class="row main-content bg-success text-center">
+            <div class="col-md-4 text-center company__info">
+                <span class="company__logo" style="position: static;">
+                    <h2><span><img src="../../../../assets/images/iustLogo.jpg" alt=""></span></h2>
+                </span>
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+                <div class="container-fluid">
+                    <div class="row mt-3 mb-5">
+                        <h2>Log In</h2>
+                    </div>
+                    <div class="row">
+                        <form #myForm=ngForm class="form-group">
+                            <div class="row">
+                                <input type="text" id="username" class="form__input" placeholder="Username"
+                                    name="username" #userName="ngModel" [(ngModel)]="userLogin.userName"
+                                    [class.is-invalid]="userName.touched && userName.invalid" required>
+                                <div *ngIf="userName.touched && userName.invalid" class="text-danger">
+                                    <div *ngIf="userName.errors?.['required']">
+                                        UserName is Required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="password" id="password" class="form__input" placeholder="Password"
+                                    name="password" #Password="ngModel" required [(ngModel)]="userLogin.password"
+                                    [class.is.invalid]="Password.touched && Password.invalid">
+                                <div *ngIf="Password.touched && Password.invalid" class="text-danger">
+                                    <div *ngIf="Password.errors?.['required']">
+                                        Password is Required
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row  justify-content-center">
+                                <input type="submit" value="Login" *ngIf="loginBtn" class="btn" [disabled]="myForm.invalid" (click)="logUser()">
+                                <button class="btn btn-primary" type="button" *ngIf="loadingBtn" disabled>
+                                    <span class="spinner-border spinner-border-sm"  role="status" aria-hidden="true"></span>
+                                    Logging in...
+                                  </button>  
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row mb-3">
+                        <p>Don't have an account? <a routerLink="/signup">Register Here</a></p>
+                    </div>
+                    <div class="row">
+                        <p class="mx-5"> <a routerLink="/reset">Forgot Password</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,100 @@
+
+<div class="col-lg-9">
+    <h1 class="mb-3 text-center" style="font-size: 25px;"><u>Add New Guest</u></h1>
+    <form #myForm="ngForm" (ngSubmit)="AddNewGuest(myForm.value)">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Guest Name:</label>
+                <input type="text" name="name" [(ngModel)]="AddGuest.name" #name="ngModel" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Designation:</label>
+                <input type="text" name="designation" [(ngModel)]="AddGuest.designation" #designation="ngModel"
+                    class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Email:</label>
+                <input type="email" name="email" [(ngModel)]="AddGuest.email" #email="ngModel" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label">Gender:</label>
+                <select class="form-select" [(ngModel)]="AddGuest.gender" name="gender"
+                    style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                    <option [ngValue]="1">Male</option>
+                    <option [ngValue]="2">Female</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> ContactNo:</label>
+                <input type="text" name="ContactNo" [(ngModel)]="AddGuest.contactNo" #contactNO="ngModel"
+                    class="form-control">
+            </div>
+
+
+            <!-- <div class="col-md-6">
+                <label for="your-name" class="form-label">Participant Role:</label>
+                <select class="form-select" [(ngModel)]="AddGuest.participantRole" name="participantRole"
+                    style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                    <option [ngValue]="0">Member</option>
+                    <option [ngValue]="1">Singer</option>
+                    <option [ngValue]="2">Poet</option>
+                    <option [ngValue]="3">Dancer</option>
+                    <option [ngValue]="4">Standup Comedian</option>
+                    <option [ngValue]="5">MoralSpeech</option>
+                    <option [ngValue]="6">GeneralSpeech</option>
+                    <option [ngValue]="7">Drama</option>
+                    <option [ngValue]="8">CheifGuest</option>
+                    <option [ngValue]="9">Guest</option>
+                    <option [ngValue]="10">Audiance</option>
+                    <option [ngValue]="11">Nominee</option>
+                    <option [ngValue]="12">Others</option>
+                </select>
+            </div> -->
+
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Arrived From:</label>
+                <input type="text" name="guestArrivedFrom" [(ngModel)]="AddGuest.guestArrivedFrom"
+                 #ArrivedFrom="ngModel"
+                    class="form-control">
+            </div>
+
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label"> Description:</label>
+                <input type="text" name="description" [(ngModel)]="AddGuest.description" #description="ngModel"
+                    class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="your-name" class="form-label">IsOutsider:</label>
+                <select class="form-select" [(ngModel)]="AddGuest.isOutSider" name="isOutsider"
+                    style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                    <option [ngValue]="true">Yes</option>
+                    <option [ngValue]="false">No</option>
+
+
+                </select>
+            </div>
+
+
+
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-dark w-100 text-center fw-bold">Add Guest</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </form>
+</div>

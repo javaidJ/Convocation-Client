@@ -1,0 +1,23 @@
+<div class="row">
+<div class="col-md-6">
+    <form #myForm="ngForm" >
+    <div class="form-group mt-4 mb-5 mx-auto col-6 text-center">
+        <label for="inputPasswordNew" ><strong> <h3>Enter Confirmation Code</h3></strong></label>
+      
+        <input type="password" #box
+        [(ngModel)]="verifyEmailModel.confirmationCode"
+        #verifyEmai="ngModel"
+        name="confirmationCode"
+        [class.is-invalid]="verifyEmai.touched && verifyEmai.invalid"
+         class="form-control" id="inputPasswordNew" required>
+         
+        <button class="btn btn-primary mt-2" [disabled]="myForm.invalid" (click)="verifyEmail()">Verify Code
+            <app-spinner *ngIf="loadSpinner"></app-spinner>
+        </button>
+        <button class="btn btn-secondary mx-2 mt-2" (click)="resendCode()">Resend Code</button>
+
+    </div>
+</form>
+    
+</div>
+</div>

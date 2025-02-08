@@ -1,0 +1,20 @@
+
+
+<div class="row">
+  <div class="col-5 me-5 mt-5 mb-4" *ngFor="let gown of GownList">
+      <div class="card" >
+    <img src="{{baseUrl+ gown.filePath}}"  style="height: 200px; width: 250px; margin-left: 70px;" alt="No preview">
+
+    <div class="card-body ">
+      <p class="item-card-title mt-3 mb-3 mx-2"><strong>Color</strong>: {{gown.color}}</p>
+      <p class="item-card-title mt-3 mb-3 mx-2"><strong>Quantity</strong>: {{gown.quantity}}</p>
+      <p class="item-card-title mt-3 mb-3 mx-2"><strong>Size</strong>: {{gown.size}}</p>
+      <p class="item-card-title mt-3 mb-3 mx-2"><strong>Charges</strong>: {{gown.charges}}</p>
+
+      <div style="margin-left: 80px;" class="mb-3">
+        <button (click)="payInvoice(gown.id)" class="btn btn-primary me-2 mx-5">Book Gown</button>
+      </div>
+    </div>
+  </div></div>
+
+</div>

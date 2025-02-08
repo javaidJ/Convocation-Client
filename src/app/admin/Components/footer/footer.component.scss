@@ -1,0 +1,15 @@
+@import "../../../../Styles/main.scss";
+.footer {
+    display: grid;
+    color: $dark;
+    width: 100%;
+    height: 20vh;
+    // bottom: -12px;
+    position: relative;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    // opacity: 75%;
+    @extend %align-center;
+
+}

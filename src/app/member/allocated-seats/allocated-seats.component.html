@@ -1,0 +1,50 @@
+
+
+<div class="content">
+    <div class="table-wrapper  me-5 mt-3">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Allocated Seats</h2>
+  
+            </div>
+            
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+
+   
+            <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>ContactNo</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Type</th>
+              <th>Section</th>
+              <th>Row</th>
+              <th>Seat Number</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of allocatedSeats">
+              <td>{{item.name}}</td>
+              <td>{{item.gender|gender}}</td>
+              <td>{{item.contactNo}}</td>
+              <td>{{item.email}}</td>
+
+              <td *ngIf="item.module==2; else elseModule">{{item.participantRole|jobRole}}</td>
+              <ng-template #elseModule>
+                <td>{{item.participantRole|participantRole}}</td>
+              </ng-template>
+              <td>{{item.module|module}}</td>
+              <td>{{item.seatSection | section}}</td>
+              <td>{{item.row}}</td>
+              <td>{{item.seatNumber}}</td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>

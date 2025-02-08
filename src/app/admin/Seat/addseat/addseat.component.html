@@ -1,0 +1,42 @@
+<div class="container register-form mt-3">
+    <h1 class="text-center"><u>Add Seat</u></h1>
+    <form class="form-content" [formGroup]="myForm" (ngSubmit)="addSeat(myForm.value)">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <label for="seatSection">Seat Section</label>
+                    <select class="form-select" formControlName="seatSection"
+                        style="border-radius: 19px; margin-bottom: 16px;" aria-label="Default select example">
+                        <option Value="" selected>select section</option>
+                        <option [ngValue]="1">A</option>
+                        <option [ngValue]="2">B</option>
+                        <option [ngValue]="3">C</option>
+                        <option [ngValue]="4">D</option>
+                    </select>
+            </div>
+            
+            <div class="col-md-6">
+ 
+                <div class="form-group">
+                    <label for="row">Row</label>
+                    <input type="number" class="form-control" formControlName="row">
+                </div>  
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="seatNumber">Seat Number</label>
+                <input type="text" class="form-control" formControlName="seatNumber">
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="d-grid">
+            <button class="btn btn-dark mt-2" type="submit" [disabled]="myForm.invalid">Add</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
